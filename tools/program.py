@@ -33,6 +33,13 @@ from ppocr.utils.utility import print_dict
 from ppocr.utils.logging import get_logger
 from ppocr.data import build_dataloader
 import numpy as np
+import wandb
+wandb.init(project='PaddleOCR', entity='folefac')
+
+#config = wandb.config
+#config.learning_rate = 0.01
+
+
 
 
 class ArgsParser(ArgumentParser):
@@ -234,6 +241,8 @@ def train(config,
             # logger and visualdl
             stats = {k: v.numpy().mean() for k, v in loss.items()}
             stats['lr'] = lr
+            wandb.log(stats)
+
             train_stats.update(stats)
 
             if cal_metric_during_train:  # only rec and cls need
