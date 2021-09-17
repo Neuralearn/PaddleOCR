@@ -4,7 +4,7 @@ Global:
   log_smooth_window: 20
   print_batch_step: 10
   save_model_dir: ./output/db_mv3/
-  save_epoch_step: 1200
+  save_epoch_step: 200
   # evaluation is run every 2000 iterations
   eval_batch_step: [0, 2000]
   cal_metric_during_train: False
@@ -64,7 +64,7 @@ Train:
     name: SimpleDataSet
     data_dir: ./data/images/
     label_file_list:
-      - ./data/images/train.txt
+      - ./data/train_data.txt
     ratio_list: [1.0]
     transforms:
       - DecodeImage: # load image
@@ -105,9 +105,9 @@ Train:
 Eval:
   dataset:
     name: SimpleDataSet
-    data_dir: ./train_data/icdar2015/text_localization/
+    data_dir: ./data/test_images/
     label_file_list:
-      - ./train_data/icdar2015/text_localization/test_icdar2015_label.txt
+      - ./data/test_data.txt
     transforms:
       - DecodeImage: # load image
           img_mode: BGR
