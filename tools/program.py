@@ -36,12 +36,6 @@ import numpy as np
 import wandb
 wandb.init(project='PaddleOCR', entity='folefac')
 
-#config = wandb.config
-#config.learning_rate = 0.01
-
-
-
-
 class ArgsParser(ArgumentParser):
     def __init__(self):
         super(ArgsParser, self).__init__(

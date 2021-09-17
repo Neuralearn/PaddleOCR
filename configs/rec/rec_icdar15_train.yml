@@ -60,8 +60,8 @@ Metric:
 Train:
   dataset:
     name: SimpleDataSet
-    data_dir: ./train_data/ic15_data/
-    label_file_list: ["./train_data/ic15_data/rec_gt_train.txt"]
+    data_dir: ./data_rec/images/
+    label_file_list: ["./data_rec/train_data.txt"]
     transforms:
       - DecodeImage: # load image
           img_mode: BGR
@@ -81,8 +81,8 @@ Train:
 Eval:
   dataset:
     name: SimpleDataSet
-    data_dir: ./train_data/ic15_data
-    label_file_list: ["./train_data/ic15_data/rec_gt_test.txt"]
+    data_dir: ./data_rec/test_images/
+    label_file_list: ["./data_rec/test_data.txt"]
     transforms:
       - DecodeImage: # load image
           img_mode: BGR
